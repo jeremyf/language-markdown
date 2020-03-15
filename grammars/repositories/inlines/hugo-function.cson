@@ -1,7 +1,7 @@
 key: 'hugo-function'
 patterns: [
   {
-    match: '({{<|{{%)(.+?)(>}}|%}})'
+    match: '({{(?:<|%|-) *[/|\\w]*)(.+?)((?:>|%|-)}})'
     captures:
       1: { name: 'punctuation.section.embedded.begin.hugo' }
       2: { patterns: [

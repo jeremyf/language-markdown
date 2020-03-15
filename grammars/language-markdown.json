@@ -99,6 +99,9 @@
         },
         {
           "include": "#math-inline"
+        },
+        {
+          "include": "#hugo"
         }
       ]
     },
@@ -1610,6 +1613,13 @@
         },
         {
           "include": "text.html.basic"
+        }
+      ]
+    },
+    "hugo": {
+      "patterns": [
+        {
+          "include": "text.html.hugo"
         }
       ]
     },

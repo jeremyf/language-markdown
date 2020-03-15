@@ -1,0 +1,4 @@
+key: 'hugo'
+patterns: [
+  { include: 'text.html.hugo' }
+]

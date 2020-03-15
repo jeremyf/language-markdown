@@ -52,6 +52,7 @@ repository:
       { include: '#references' }
       { include: '#github-inlines' }
       { include: '#math-inline' }
+      { include: '#hugo' }
     ]
   flavors:
     patterns: [

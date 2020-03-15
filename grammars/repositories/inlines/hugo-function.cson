@@ -3,13 +3,13 @@ patterns: [
   {
     match: '({{(?:<|%|-) *[/|\\w]*)(.+?)((?:>|%|-)}})'
     captures:
-      1: { name: 'punctuation.section.embedded.begin.hugo' }
+      1: { name: 'hugo.begin.code' }
       2: { patterns: [
              { include: '#hugo-param' }
              { include: '#links' }
              { include: '#code' }
            ]
          }
-      3: { name: 'punctuation.section.embedded.end.hugo' }
+      3: { name: 'hugo.begin.code' }
   }
 ]

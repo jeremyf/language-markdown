@@ -1619,12 +1619,15 @@
     "hugo-function": {
       "patterns": [
         {
-          "match": "({{(?:<|%|-) *[/|\\w]*)(.+?)((?:>|%|-)}})",
+          "match": "({{(?:<|%|-) *[/|\\w]*)((.+?))((?:>|%|-)}})",
           "captures": {
             "1": {
-              "name": "punctuation.section.embedded.begin.hugo"
+              "name": "hugo.begin.code"
             },
             "2": {
+              "name": "hugo.inner.code"
+            },
+            "3": {
               "patterns": [
                 {
                   "include": "#hugo-param"
@@ -1637,8 +1640,8 @@
                 }
               ]
             },
-            "3": {
-              "name": "punctuation.section.embedded.end.hugo"
+            "4": {
+              "name": "hugo.begin.code"
             }
           }
         }

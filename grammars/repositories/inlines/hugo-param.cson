@@ -1,0 +1,14 @@
+key: 'hugo-param'
+patterns: [
+  {
+    match: '(\\w+=")([^"]+)(")'
+    captures:
+      1: { name: 'embedded.hugo.begin.parameter.key' }
+      2: { patterns: [
+             { include: '#links' }
+             { include: '#code' }
+           ]
+         }
+      3: { name: 'embedded.hugo.end.parameter.key' }
+  }
+]

@@ -101,7 +101,7 @@
           "include": "#math-inline"
         },
         {
-          "include": "#hugo"
+          "include": "#hugo-function"
         }
       ]
     },
@@ -1616,10 +1616,56 @@
         }
       ]
     },
-    "hugo": {
+    "hugo-function": {
       "patterns": [
         {
-          "include": "text.html.hugo"
+          "match": "({{<|{{%)(.+?)(>}}|%}})",
+          "captures": {
+            "1": {
+              "name": "punctuation.section.embedded.begin.hugo"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#hugo-param"
+                },
+                {
+                  "include": "#links"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.section.embedded.end.hugo"
+            }
+          }
+        }
+      ]
+    },
+    "hugo-param": {
+      "patterns": [
+        {
+          "match": "(\\w+=\")([^\"]+)(\")",
+          "captures": {
+            "1": {
+              "name": "embedded.hugo.begin.parameter.key"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#links"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "embedded.hugo.end.parameter.key"
+            }
+          }
         }
       ]
     },

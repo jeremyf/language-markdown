@@ -1619,15 +1619,12 @@
     "hugo-function": {
       "patterns": [
         {
-          "match": "({{(?:<|%|-) *[/|\\w]*)((.+?))((?:>|%|-)}})",
+          "match": "({{(?:<|%|-) *[/|\\w]*)(.+?)((?:>|%|-)}})",
           "captures": {
             "1": {
-              "name": "hugo.begin.code"
+              "name": "embedded.code.hugo.begin"
             },
             "2": {
-              "name": "hugo.inner.code"
-            },
-            "3": {
               "patterns": [
                 {
                   "include": "#hugo-param"
@@ -1640,8 +1637,8 @@
                 }
               ]
             },
-            "4": {
-              "name": "hugo.begin.code"
+            "3": {
+              "name": "embedded.code.hugo.end"
             }
           }
         }
@@ -1650,12 +1647,15 @@
     "hugo-param": {
       "patterns": [
         {
-          "match": "(\\w+=\")([^\"]+)(\")",
+          "match": "(\\w+=[\"'])(([^[\"']]+))([\"'])",
           "captures": {
             "1": {
-              "name": "embedded.hugo.begin.parameter.key"
+              "name": "embedded.code.hugo.begin.parameter.key"
             },
             "2": {
+              "name": "embedded.code.hugo.begin.parameter.value"
+            },
+            "3": {
               "patterns": [
                 {
                   "include": "#links"
@@ -1665,8 +1665,8 @@
                 }
               ]
             },
-            "3": {
-              "name": "embedded.hugo.end.parameter.key"
+            "4": {
+              "name": "embedded.code.hugo.end.parameter.key"
             }
           }
         }

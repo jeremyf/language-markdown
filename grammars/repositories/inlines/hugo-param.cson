@@ -3,13 +3,13 @@ patterns: [
   {
     match: '(\\w+=["\'])(([^["\']]+))(["\'])'
     captures:
-      1: { name: 'embedded.code.hugo.begin.parameter.key' }
-      2: { name: 'embedded.code.hugo.begin.parameter.value' }
+      1: { name: 'code.hugo.function.parameter.key' }
+      2: { name: 'code.hugo.function.parameter.value' }
       3: { patterns: [
              { include: '#links' }
              { include: '#code' }
            ]
          }
-      4: { name: 'embedded.code.hugo.end.parameter.key' }
+      4: { name: 'code.hugo.function.parameter.key' }
   }
 ]

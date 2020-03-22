@@ -1650,15 +1650,18 @@
     "hugo-param": {
       "patterns": [
         {
-          "match": "(\\w+=[\"'])(([^[\"']]+))([\"'])",
+          "match": "((\\w+)=[\"'](([^[\"']]+))[\"'])",
           "captures": {
             "1": {
-              "name": "code.hugo.function.parameter.key"
+              "name": "code.hugo.function.parameter"
             },
             "2": {
-              "name": "code.hugo.function.parameter.value"
+              "name": "code.hugo.function.parameter.key"
             },
             "3": {
+              "name": "code.hugo.function.parameter.value"
+            },
+            "4": {
               "patterns": [
                 {
                   "include": "#links"
@@ -1667,9 +1670,6 @@
                   "include": "#code"
                 }
               ]
-            },
-            "4": {
-              "name": "code.hugo.function.parameter.key"
             }
           }
         }
